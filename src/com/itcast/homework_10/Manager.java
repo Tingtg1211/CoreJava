@@ -1,0 +1,18 @@
+package com.itcast.homework_10;
+
+public class Manager extends Employee{
+    double bonus;
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
+    public void work(){
+        super.work();
+        System.out.println("bonus: " + bonus);
+    }
+}
