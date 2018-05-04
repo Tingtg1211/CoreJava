@@ -22,7 +22,7 @@ public class Solution_addBinary {
             carry = sum / 2;
 
         }
-        if (carry != 0) sb.append(carry);
+        if (carry != 0) sb.append(carry);  //因为逆序，逆转后0无效
         return sb.reverse().toString(); //sb为逆序，需要逆转
 
     }
