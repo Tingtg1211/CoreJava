@@ -6,6 +6,8 @@ package com.algorithm.LeetCode;
  * Time: 20:59
  */
 
+import java.util.List;
+
 /**
  * Example:
 
@@ -44,6 +46,33 @@ public class Solution19_removeNthFromEnd {
         }
 
         return head;
+    }
+
+    public ListNode removeNthFromEnd_2(ListNode head, int n){
+        if(head == null){
+            return null;
+        }
+        ListNode start = new ListNode(0); //设置头节点的目的：处理删除（正数第一个节点）的情况
+        ListNode slow = start;
+        ListNode fast = start;
+        slow.next = head;
+        for(int i = 1; i <= n; i ++){
+            if(fast.next != null){
+                fast = fast.next;
+            }else{
+                return null;
+            }
+        }
+
+        while (fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next.next;
+        return start.next;  //重要:考虑节点数目为1的情况，不能return head;
+
+
     }
 
 }
