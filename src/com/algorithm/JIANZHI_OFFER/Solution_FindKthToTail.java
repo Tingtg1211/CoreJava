@@ -15,8 +15,6 @@ import java.util.List;
   法二：定义两个指针。第一个指针从链表的头指针开始遍历向前走k-1步，第二个指针保持不动；从第k步开始
   ，第二个指针也开始从链表的头指针开始遍历。由于两个指针的距离保持在k-1，当走在前面的指针到达链表的尾节点时，走在后面的
   指针正好指向倒数第k个节点。
-
-
  */
 
 /*
@@ -25,22 +23,17 @@ public class Solution_FindKthToTail {
         int num = 0;
         if(head == null)
             return null;
-
         ListNode  temp = head;
-
         for(; temp != null; temp = temp.next){
             num ++;
         }
-
         if(k > num)
             return null;
-
         //倒数第k个即正数第num-k—+1个
         for(int j = 1; j < num - k + 1; j ++){
             head = head.next;
         }
         return head;
-
     }
 }
 */
